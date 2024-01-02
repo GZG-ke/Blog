@@ -8,7 +8,7 @@
 	margin: 24px;
 	background-color: #fff;
 	overflow: auto; // 超出设定高度，出现滚动条
-	height: 880px; // 给容器定一个高度
+	height: 580px; // 给容器定一个高度
 	text-align: center;
 
 	/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/

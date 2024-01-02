@@ -8,11 +8,11 @@ import Collapse from "./collapse.vue";
 import Breadcrumb from "./breadcrumb.vue";
 // sidebarItem 项组件
 import SideBarItem from "./sidebarItem.vue";
-import { routes } from "@/router";
+import { filteredRoutes } from "@/router";
 // 拿到路由列表，过滤我们不想要的
-const router = useRouter();
+//const router = useRouter();
 //const routerList = router.getRoutes().filter((v) => v.meta && v.meta.isShow);
-const routerList = routes;
+const routerList = filteredRoutes;
 // menu菜单是否折叠
 const isCollapse = ref(false);
 /**
@@ -32,10 +32,10 @@ const handleCollapse = () => {
 
       <!-- 左侧-左侧菜单栏 -->
       <el-menu
-        active-text-color="#fff"
+        active-text-color="#ffd04b"
         background-color="#001529"
         :default-active="$route.path"
-        text-color="#999"
+        text-color="#fff"
         :unique-opened="false"
         router
         :collapse="false"
@@ -85,7 +85,7 @@ const handleCollapse = () => {
     background-color: #001529;
     transition: width 0.3s ease;
     &.collapsed {
-      width: 70px;
+      width: 80px;
     }
   }
   // 主体区域背景色
@@ -98,27 +98,6 @@ const handleCollapse = () => {
     height: calc(100% - 48px);
     overflow: auto;
     border-right: 0;
-
-    /** 子级菜单样式 */
-    :deep(.el-sub-menu) {
-      .el-menu {
-        .el-sub-menu__title,
-        .el-menu-item {
-          font-size: 12px;
-          background-color: #0f0303 !important;
-
-          &:focus {
-            font-weight: 700;
-            background: #1ccba9 !important;
-          }
-        }
-
-        .is-active {
-          font-weight: 700;
-          background: #1ccba9 !important;
-        }
-      }
-    }
   }
 }
 </style>

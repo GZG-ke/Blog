@@ -3,9 +3,14 @@ import type { App } from 'vue';
 import { close, start } from "@/utils/nprogress";
 export const routes: Array<RouteRecordRaw> = [
   {
-    path: "/about",
-    name: "",
+    path: "/view",
+    name: "view",
     redirect: "/home",
+    meta: {
+      isShow: true,
+      title: "系统设置",
+      icon: "menu-home",
+    },
     children: [
       {
         path: "/home",
@@ -26,14 +31,6 @@ export const routes: Array<RouteRecordRaw> = [
           icon: "menu-home", // menu菜单项的图标，我此处是与封装好的 svg 组件结合使用的
         },
       },
-    ],
-  },
-  {
-    path: "/setting",
-    name: "setting",
-    component: null,
-    redirect: "/setting",    
-    children: [
       {
         path: '/message-setting',
         name: 'message-setting',
@@ -45,6 +42,17 @@ export const routes: Array<RouteRecordRaw> = [
         },
       }
     ],
+  },
+  {
+    path: "/about",
+    name: "about",
+    redirect: null,    
+    component: () => import("@/views/about/about.vue"),
+    meta: {
+      isShow: true, // 控制当前项是否在菜单栏中渲染出来，比如你写了 login 页面的路由，但是并不希望 login在menu菜单中渲染出来，即可设为false
+      title: "关于", // menu菜单项的名称，没啥好说的
+    },
+    children:null,
   }
 ];
 const router = createRouter({
@@ -84,6 +92,14 @@ function filterRoutes(routes: RouteRecordRaw[]): RouteRecordRaw[] {
     );
   });
 }
+
+export const filteredRoutes = routes.map((route) => {
+  if (route.children && Array.isArray(route.children)) {
+    const filteredChildren = route.children.filter((child) => child.meta && child.meta.isShow);
+    return { ...route, children: filteredChildren };
+  }
+  return route;
+}).filter((route) => route.meta && route.meta.isShow);
 export default router;
 export const setupRouter = (app: App<Element>) => {
 	app.use(router);

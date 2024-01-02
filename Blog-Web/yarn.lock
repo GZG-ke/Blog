@@ -236,10 +236,10 @@
   resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.202.tgz"
   integrity sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==
 
-"@types/node@^18.0.0 || >=20.0.0":
-  version "20.10.5"
-  resolved "https://registry.npmjs.org/@types/node/-/node-20.10.5.tgz"
-  integrity sha512-nNPsNE65wjMxEKI93yOP+NPGGBJz/PoN3kZsVLee0XMiJolxSekEVD8wRwBUBqkwc7UWop0edW50yrCQW4CyRw==
+"@types/node@^18.0.0 || >=20.0.0", "@types/node@^20.10.6":
+  version "20.10.6"
+  resolved "https://registry.npmjs.org/@types/node/-/node-20.10.6.tgz"
+  integrity sha512-Vac8H+NlRNNlAmDfGUP7b5h/KA+AtWIzuXy0E6OyP8f1tCLYAtPvKRRDJjAPqhpCb0t6U2j7/xqAuLEebW2kiw==
   dependencies:
     undici-types "~5.26.4"
 
@@ -252,6 +252,11 @@
   version "0.0.16"
   resolved "https://registry.npmjs.org/@types/web-bluetooth/-/web-bluetooth-0.0.16.tgz"
   integrity sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==
+
+"@types/webpack-env@^1.18.4":
+  version "1.18.4"
+  resolved "https://registry.npmjs.org/@types/webpack-env/-/webpack-env-1.18.4.tgz"
+  integrity sha512-I6e+9+HtWADAWeeJWDFQtdk4EVSAbj6Rtz4q8fJ7mSr1M0jzlFcs8/HZ+Xb5SHzVm1dxH7aUiI+A8kA8Gcrm0A==
 
 "@typescript-eslint/eslint-plugin@^6.16.0":
   version "6.16.0"
